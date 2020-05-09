@@ -33,7 +33,7 @@ namespace HealthPromotion
             app.UseStaticFiles();
             app.UseSession();
             app.UseMvcWithDefaultRoute();
-
+         
             app.UseRouting();
         }
     }

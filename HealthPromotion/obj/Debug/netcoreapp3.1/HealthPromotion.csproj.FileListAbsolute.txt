@@ -2,7 +2,6 @@ C:\Users\HP\source\repos\HealthPromotion\HealthPromotion\bin\Debug\netcoreapp3.1
 C:\Users\HP\source\repos\HealthPromotion\HealthPromotion\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\HP\source\repos\HealthPromotion\HealthPromotion\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\HP\source\repos\HealthPromotion\HealthPromotion\bin\Debug\netcoreapp3.1\HealthPromotion.exe
-C:\Users\HP\source\repos\HealthPromotion\HealthPromotion\obj\Debug\netcoreapp3.1\HealthPromotion.csprojAssemblyReference.cache
 C:\Users\HP\source\repos\HealthPromotion\HealthPromotion\obj\Debug\netcoreapp3.1\HealthPromotion.AssemblyInfoInputs.cache
 C:\Users\HP\source\repos\HealthPromotion\HealthPromotion\obj\Debug\netcoreapp3.1\HealthPromotion.AssemblyInfo.cs
 C:\Users\HP\source\repos\HealthPromotion\HealthPromotion\obj\Debug\netcoreapp3.1\HealthPromotion.RazorTargetAssemblyInfo.cache
@@ -107,9 +106,9 @@ C:\Users\HP\source\repos\HealthPromotion\HealthPromotion\obj\Debug\netcoreapp3.1
 C:\Users\HP\source\repos\HealthPromotion\HealthPromotion\obj\Debug\netcoreapp3.1\HealthPromotion.RazorTargetAssemblyInfo.cs
 C:\Users\HP\source\repos\HealthPromotion\HealthPromotion\obj\Debug\netcoreapp3.1\HealthPromotion.Views.pdb
 C:\Users\HP\source\repos\HealthPromotion\HealthPromotion\obj\Debug\netcoreapp3.1\Razor\Views\Post\List.cshtml.g.cs
-C:\Users\HP\source\repos\HealthPromotion\HealthPromotion\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
-C:\Users\HP\source\repos\HealthPromotion\HealthPromotion\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewImports.cshtml.g.cs
-C:\Users\HP\source\repos\HealthPromotion\HealthPromotion\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewStart.cshtml.g.cs
-C:\Users\HP\source\repos\HealthPromotion\HealthPromotion\bin\Debug\netcoreapp3.1\libman.json
 C:\Users\HP\source\repos\HealthPromotion\HealthPromotion\obj\Debug\netcoreapp3.1\HealthPromotion.csproj.CoreCompileInputs.cache
 C:\Users\HP\source\repos\HealthPromotion\HealthPromotion\obj\Debug\netcoreapp3.1\HealthPromotion.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\HP\source\repos\HealthPromotion\HealthPromotion\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\HP\source\repos\HealthPromotion\HealthPromotion\obj\Debug\netcoreapp3.1\HealthPromotion.csprojAssemblyReference.cache
+C:\Users\HP\source\repos\HealthPromotion\HealthPromotion\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\HP\source\repos\HealthPromotion\HealthPromotion\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
