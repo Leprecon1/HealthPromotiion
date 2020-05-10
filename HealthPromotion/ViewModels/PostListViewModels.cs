@@ -8,7 +8,7 @@ namespace HealthPromotion.ViewModels
 {
     public class PostListViewModel
     {
-        public IEnumerable<Post> getAllPosts { get; set; }
-        public string currCategory { get; set; }
+        public IEnumerable<Post> GetAllPosts { get; set; }
+        public string CurrCategory { get; set; }
     }
 }

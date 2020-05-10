@@ -1,44 +1,9 @@
 ﻿@*<h2>Все посты </h2>
     <h3>@Model.currCategory</h3>*@
 
-@foreach (var post in Model.getAllPosts)
+@foreach (var post in Model.GetAllPosts)
 {
-    <div class="single-amenities">
-        <div class="amenities-thumb">
-            <img class="img-fluid w-100"
-                 src=@post.Image
-                 alt="" />
-        </div>
-        <div class="amenities-details">
-            <h5>
-                <a href="#">
-                    @post.Name
-                </a>
-            </h5>
-            <div class="amenities-meta mb-10">
-                <a href="#" class=""><span class="ti-calendar"></span>@post.DateTime.ToString()</a>
-                <a href="#" class="ml-20"><span class="ti-comment"></span>05</a>
-            </div>
-            <p>
-                @post.ShortDescription
-            </p>
-
-            <div class="d-flex justify-content-between mt-20">
-                <div>
-                    <a href="#" class="blog-post-btn">
-                        Read More <span class="ti-arrow-right"></span>
-                    </a>
-                </div>
-                <div class="category">
-                    <a href="#">
-                        <span class="ti-folder mr-1"></span>Travel
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-}
+   <partial name="_AllPosts" model="post" />
 }
 
 

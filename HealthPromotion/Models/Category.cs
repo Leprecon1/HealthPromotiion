@@ -7,7 +7,7 @@ namespace HealthPromotion.Models
 {
     public class Category
     {
-        public int Id { get; set; }
+        public int CategoryId { get; set; }
         public string CategoryName { get; set; }
         public List<Post> Posts { get; set; }
     }

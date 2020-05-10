@@ -11,21 +11,19 @@ namespace HealthPromotion.Controllers
 {
     public class PostController:Controller
     {
-        private readonly IPostRepository postRepository;
-        private readonly ICategoryRepository categoryRepository;
+        AppDbContext db;
 
-        public PostController(IPostRepository postRepository, ICategoryRepository categoryRepository)
+        public PostController(AppDbContext dbContext)
         {
-            this.postRepository = postRepository;
-            this.categoryRepository = categoryRepository;
+            db = dbContext;
         }
 
         public ViewResult List()
         {
             ViewBag.Title = "Page of posts";
             PostListViewModel postListViewModel = new PostListViewModel();
-            postListViewModel.getAllPosts = postRepository.AllPost;
-            postListViewModel.currCategory = "Посты";
+            postListViewModel.GetAllPosts = db.Posts.ToList();
+            postListViewModel.CurrCategory = "Посты";
             return View(postListViewModel);
         }
     }
