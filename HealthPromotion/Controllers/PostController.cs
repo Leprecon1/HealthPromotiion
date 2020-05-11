@@ -11,7 +11,7 @@ namespace HealthPromotion.Controllers
 {
     public class PostController:Controller
     {
-        AppDbContext db;
+        private readonly AppDbContext db;
 
         public PostController(AppDbContext dbContext)
         {
@@ -21,9 +21,11 @@ namespace HealthPromotion.Controllers
         public ViewResult List()
         {
             ViewBag.Title = "Page of posts";
-            PostListViewModel postListViewModel = new PostListViewModel();
-            postListViewModel.GetAllPosts = db.Posts.ToList();
-            postListViewModel.CurrCategory = "Посты";
+            PostListViewModel postListViewModel = new PostListViewModel
+            {
+                GetAllPosts = db.Posts.ToList(),
+                CurrCategory = "Посты"
+            };
             return View(postListViewModel);
         }
     }

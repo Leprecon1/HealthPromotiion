@@ -62,7 +62,7 @@ namespace HealthPromotion.Models
                Text = "", Image ="/img/blog-post/blog-post4.jpg",
                 PostOfWeek = false, Category = categoryRepository.AllCategories.First(x=> x.CategoryId == 3)},
 
-
+            
         };
         
 

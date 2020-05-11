@@ -40,24 +40,11 @@
             <div class="header-wrap">
                 <div class="header-top d-flex justify-content-between align-items-lg-center navbar-expand-lg">
                     <div class="col menu-left">
-                        <a class="active" href="index.html">На главную</a>
+                        <a class="active" asp-controller="Home" asp-action="Index">На главную</a>
                     </div>
 
                     <!-- Dropdown menu -->
-                    <div class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle"
-                           href="#"
-                           id="navbardrop"
-                           data-toggle="dropdown">
-                           Категории
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="elements.html">Еда</a>
-                            <a class="dropdown-item" href="elements.html">Мотиваторы</a>
-                            <a class="dropdown-item" href="elements.html">Наука и Медицина</a>
-                            <a class="dropdown-item" href="elements.html">Тренировки</a>
-                        </div>
-                    </div>
+                    @await Component.InvokeAsync("CategoryMenu")
 
                     <div class="col-5 text-lg-center mt-2 mt-lg-0">
                         <span class="logo-outer">
@@ -88,9 +75,6 @@
                                     <a class="nav-link" href="category.html">Category1</a>
                                 </li>
 
-
-
-
                                 <li class="nav-item">
                                     <a class="nav-link" href="blog-single.html">Блог</a>
                                 </li>
@@ -114,7 +98,7 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="row">
-                     @RenderBody()
+                    @RenderBody()
                     </div>
 
 

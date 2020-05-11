@@ -42,14 +42,16 @@ namespace HealthPromotion
             app.UseStatusCodePages();
             app.UseStaticFiles();
             app.UseSession();
-            app.UseMvcWithDefaultRoute();
+      //      app.UseMvcWithDefaultRoute();
          
             app.UseRouting();
-            app.UseEndpoints(endpoint =>
-            endpoint.MapControllerRoute(
-            name: "default",
-            pattern: "{controller=Home}/{action=Index}/{Id?}"));
 
+            app.UseMvc(route =>
+            {
+                route.MapRoute(name: "default", template: "{controller=Home}/{action=Index}/{Id?}");
+            });
+            
+           
         }
     }
 }

@@ -7,12 +7,10 @@
         </div>
         <div class="amenities-details">
             <h5>
-                <a href="#">
-                    @Model.Name
-                </a>
+                <a asp-controller="Home" asp-action="PostDetails" asp-route-id="@Model.PostId"> @Model.Name </a>
             </h5>
             <div class="amenities-meta mb-10">
-                <a href="#" class=""><span class="ti-calendar"></span>@Model.DateTime.ToString()</a>
+                <a href="#" class=""><span class="ti-calendar"></span>@Model.DateTime.ToString("d")</a>
                 <a href="#" class="ml-20"><span class="ti-comment"></span>05</a>
             </div>
             <p>
@@ -21,13 +19,14 @@
 
             <div class="d-flex justify-content-between mt-20">
                 <div>
-                    <a href="#" class="blog-post-btn">
-                        Read More <span class="ti-arrow-right"></span>
+                    <a class="blog-post-btn" asp-controller="Home" asp-action="PostDetails" asp-route-id="@Model.PostId">
+                        Read More 
+                        <span class="ti-arrow-right"></span>
                     </a>
                 </div>
                 <div class="category">
                     <a href="#">
-                        <span class="ti-folder mr-1"></span>Travel
+                        <span class="ti-folder mr-1"></span>@Model.Category.CategoryName
                     </a>
                 </div>
             </div>

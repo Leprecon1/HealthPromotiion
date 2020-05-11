@@ -10,6 +10,7 @@ namespace HealthPromotion.ViewModels
     {
         public IEnumerable<Post> PostOfWeek { get; set; }
         public IEnumerable<Post> GetAllPosts { get; set; }
+        public string CurrCategory { get; set; }
 
     }
 }

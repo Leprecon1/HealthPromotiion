@@ -20,7 +20,7 @@ namespace HealthPromotion.Models
             modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 1, CategoryName = "Food" });
             modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 2, CategoryName = "Motivation" });
             modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 3, CategoryName = "Training" });
-            modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 4, CategoryName = "Science and medicine" });
+            modelBuilder.Entity<Category>().HasData( new Category{ CategoryId = 4, CategoryName = "Science"} );
 
             modelBuilder.Entity<Post>().HasData(new Post
             {
