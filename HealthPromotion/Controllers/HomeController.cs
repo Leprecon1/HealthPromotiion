@@ -11,11 +11,12 @@ namespace HealthPromotion.Controllers
     public class HomeController : Controller
     {
         private readonly IPostRepository postRepository;
+        private readonly AppDbContext db;
 
-        public HomeController(IPostRepository postRepository)
+        public HomeController(IPostRepository postRepository, AppDbContext db)
         {
             this.postRepository = postRepository;
-             
+            this.db = db;
         }
 
      
@@ -53,6 +54,22 @@ namespace HealthPromotion.Controllers
                 return NotFound();
             }
             return View(post);
+        }
+
+        [HttpGet]
+        public IActionResult Buy(int? id)
+        {
+            if (id == null) return RedirectToAction("Index");
+            ViewBag.PostId = id;
+            return View();
+        }
+
+        [HttpPost]
+        public string Buy(Post post)
+        {
+            db.Posts.Add(post);
+            db.SaveChanges();
+            return "Спасибо за публикацию!";
         }
       
     }
