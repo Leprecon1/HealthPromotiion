@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Category>
+
+<div class="single-sidebar-widget post-category-widget">
+    <h4 class="category-title">Catgories</h4>
+    <ul class="cat-list mt-20">
+        @foreach (var category in Model)
+        {
+            <li>
+                <a class="d-flex justify-content-between" asp-controller="Home" asp-action="Index"
+                   asp-route-category="@category.CategoryName">
+                    <p>@category.CategoryName</p>
+                </a>
+            </li>
+        }
+        <li>
+            <a  class="d-flex justify-content-between"
+               asp-controller="Home" asp-action="Index" asp-route-Category="">View all Categories</a>
+        </li>
+    </ul>
+</div>

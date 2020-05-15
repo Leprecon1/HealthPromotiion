@@ -1,0 +1,24 @@
+﻿
+<div class="single-sidebar-widget popular-post-widget">
+    <h4 class="popular-title">Popular Posts</h4>
+    <div class="popular-post-list">
+
+        @foreach (var post in Model.PostOfWeek)
+        {
+            <div class="single-post-list">
+                <div class="thumb">
+                    <img class="img-fluid" src=@post.Image alt="">
+                </div>
+                <div class="details mt-20">
+                    <a asp-controller="Home" asp-action="PostDetails" asp-route-id="@post.PostId">
+                        <h6>
+                            @post.Name
+                        </h6>
+                    </a>
+                    <p>@post.DateTime.ToString("d")</p>
+                </div>
+            </div>
+
+        }
+    </div>
+</div>

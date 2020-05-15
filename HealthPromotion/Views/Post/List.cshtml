@@ -1,9 +1,0 @@
-﻿@*<h2>Все посты </h2>
-    <h3>@Model.currCategory</h3>*@
-
-@foreach (var post in Model.GetAllPosts)
-{
-   <partial name="_AllPosts" model="post" />
-}
-
-

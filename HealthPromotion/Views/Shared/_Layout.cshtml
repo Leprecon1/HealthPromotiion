@@ -44,12 +44,12 @@
                     </div>
 
                     <!-- Dropdown menu -->
-                    @await Component.InvokeAsync("CategoryMenu")
+                    @await Component.InvokeAsync("CategoryMenu");
 
                     <div class="col-5 text-lg-center mt-2 mt-lg-0">
                         <span class="logo-outer">
                             <span class="logo-inner">
-                                <a href="index.html">
+                                <a \asp-controller="Home" asp-action="Index">
                                     <img class="mx-auto" src="/img/logo1.png" alt="" />
                                 </a>
                             </span>
@@ -71,15 +71,12 @@
                                 <li class="nav-item hide-lg">
                                     <a asp-controller="Home" asp-action="Index">Home</a>
                                 </li>
-                                <li class="nav-item hide-lg">
-                                    <a class="nav-link" href="category.html">Category1</a>
-                                </li>
-
+                              
                                 <li class="nav-item">
-                                    <a class="nav-link" href="blog-single.html">Блог</a>
+                                    <a class="nav-link" asp-controller="Home" asp-action="Blog">Блог</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">О нас</a>
+                                    <a class="nav-link" asp-controller="Home" asp-action="FeedBack" >Обратная связь</a>
                                 </li>
                             </ul>
                         </div>
@@ -100,8 +97,6 @@
                     <div class="row">
                     @RenderBody()
                     </div>
-
-
                     <div class="row">
                         <div class="col-lg-12">
                             <nav class="blog-pagination justify-content-center d-flex">
@@ -135,8 +130,9 @@
                 <div class="col-lg-4 sidebar-widgets">
                     <div class="widget-wrap">
                         <div class="single-sidebar-widget search-widget">
-                            <form class="search-form" action="#">
-                                <input placeholder="Search Posts" name="search" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Posts'">
+                            <form class="search-form"  asp-controller="Home" asp-action="Search" 
+                                  asp-route-postName="Тарелка здорового питания"> @*тут должно быть поле поиска*@
+                                <input  placeholder="Search Posts" name="search" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Posts'">
                                 <button type="submit"><i class="fa fa-search"></i></button>
                             </form>
                         </div>
@@ -153,103 +149,9 @@
                             </ul>
                         </div>
 
-                        <div class="single-sidebar-widget post-category-widget">
-                            <h4 class="category-title">Catgories</h4>
-                            <ul class="cat-list mt-20">
-                                <li>
-                                    <a href="#" class="d-flex justify-content-between">
-                                        <p>Fashion</p>
-                                        <p>59</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex justify-content-between">
-                                        <p>Travel</p>
-                                        <p>09</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex justify-content-between">
-                                        <p>Lifestyle</p>
-                                        <p>24</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex justify-content-between">
-                                        <p>Shopping</p>
-                                        <p>44</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex justify-content-between">
-                                        <p>Food</p>
-                                        <p>15</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="single-sidebar-widget popular-post-widget">
-                            <h4 class="popular-title">Popular Posts</h4>
-                            <div class="popular-post-list">
-                                <div class="single-post-list">
-                                    <div class="thumb">
-                                        <img class="img-fluid" src="/img/blog/pp1.jpg" alt="">
-                                    </div>
-                                    <div class="details mt-20">
-                                        <a href="blog-single.html">
-                                            <h6>
-                                                Retro-electric 1967 Ford Mustang
-                                                revealed in Russia
-                                            </h6>
-                                        </a>
-                                        <p>Mate Winston | Dec 15</p>
-                                    </div>
-                                </div>
-                                <div class="single-post-list">
-                                    <div class="thumb">
-                                        <img class="img-fluid" src="/img/blog/pp2.jpg" alt="">
-                                    </div>
-                                    <div class="details mt-20">
-                                        <a href="blog-single.html">
-                                            <h6>
-                                                Unsettling trend of food safety at
-                                                sports stadiums uncovered
-                                            </h6>
-                                        </a>
-                                        <p>Mate Winston | Dec 15</p>
-                                    </div>
-                                </div>
-                                <div class="single-post-list">
-                                    <div class="thumb">
-                                        <img class="img-fluid" src="/img/blog/pp3.jpg" alt="">
-                                    </div>
-                                    <div class="details mt-20">
-                                        <a href="blog-single.html">
-                                            <h6>
-                                                Christmas cottage from the Holiday
-                                                flick selling for people
-                                            </h6>
-                                        </a>
-                                        <p>Mate Winston | Dec 15</p>
-                                    </div>
-                                </div>
-                                <div class="single-post-list">
-                                    <div class="thumb">
-                                        <img class="img-fluid" src="/img/blog/pp4.jpg" alt="">
-                                    </div>
-                                    <div class="details mt-20">
-                                        <a href="blog-single.html">
-                                            <h6>
-                                                Home improvement advice every
-                                                homeowner needs to know
-                                            </h6>
-                                        </a>
-                                        <p>Mate Winston | Dec 15</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                                @await Component.InvokeAsync("CategoryMenuSidebar")
+                         
+                                @await Component.InvokeAsync("PostOfTheWeek") 
 
                         <div class="single-sidebar-widget newsletter-widget">
                             <h4 class="newsletter-title">Newsletter</h4>
@@ -280,7 +182,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                    </div>
             </div>
             <!-- End Blog Post Siddebar -->
         </div>
@@ -293,17 +195,17 @@
             <div class="row">
                 <div class="col-lg-3  col-md-6 col-sm-6">
                     <div class="single-footer-widget">
-                        <h6>About Us</h6>
+                        <h6>О нас</h6>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore
-                            magna aliqua.
+                            это научный блог о том, как просто держать свое тело в идеальном состоянии, быть здоровым, 
+                            правильно питаться, долго и радостно жить.
                         </p>
                     </div>
                 </div>
                 <div class="col-lg-4  col-md-6 col-sm-6">
                     <div class="single-footer-widget">
-                        <h6>Newsletter</h6>
-                        <p>Stay update with our latest</p>
+                        <h6>Новостная рассылка</h6>
+                        <p>Оставайся в курсе новых новостей</p>
                         <div class="" id="mc_embed_signup">
 
                             <form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
@@ -331,7 +233,7 @@
                 </div>
                 <div class="col-lg-3  col-md-6 col-sm-6">
                     <div class="single-footer-widget mail-chimp">
-                        <h6 class="mb-20">Instragram Feed</h6>
+                        <h6 class="mb-20">Наш Instragram </h6>
                         <ul class="instafeed d-flex flex-wrap">
                             <li><img src="/img/instagram/i1.jpg" alt=""></li>
                             <li><img src="/img/instagram/i2.jpg" alt=""></li>
@@ -346,10 +248,10 @@
                 </div>
                 <div class="col-lg-2 col-md-6 col-sm-6">
                     <div class="single-footer-widget">
-                        <h6>Follow Us</h6>
-                        <p>Let us be social</p>
+                        <h6>Станьте частью нашего сообщества</h6>
+                        <p>Давайте будем социальными</p>
                         <div class="footer-social d-flex align-items-center">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href=""><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-twitter"></i></a>
                             <a href="#"><i class="fa fa-dribbble"></i></a>
                             <a href="#"><i class="fa fa-behance"></i></a>
@@ -360,8 +262,13 @@
             <div class="footer-bottom d-flex justify-content-center align-items-center flex-wrap">
                 <p class="footer-text m-0">
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    Copyright &copy;
-                    <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+
+
+                    @*Copyright &copy;
+                    <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>*@
+
+
+
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 </p>
             </div>

@@ -1,10 +1,4 @@
-﻿@*@foreach(var post in Model.PostOfWeek)
-{
-    <partial name="_Carousel" model="post" />           ============ post of week here ===============
-}*@
- 
-
-@foreach (var post in Model.GetAllPosts)
+﻿@foreach (var post in Model.GetAllPosts)
 {
     <partial name="_AllPosts" model="post" />
 }
