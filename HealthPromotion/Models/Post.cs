@@ -15,7 +15,7 @@ namespace HealthPromotion.Models
         public DateTime DateTime { get; set; }
         public string ShortDescription { get; set; }
         public string Text { get; set; }
-        public string Image { get; set; }
+        public byte[] Image { get; set; }
         public bool PostOfWeek { get; set; }
         public int CategoryId { get; set; }
         public Category Category { get; set; }

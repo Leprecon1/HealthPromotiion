@@ -75,8 +75,8 @@ namespace HealthPromotion.Migrations
                     b.Property<DateTime>("DateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Image")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<byte[]>("Image")
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
@@ -103,8 +103,8 @@ namespace HealthPromotion.Migrations
                             AuthorName = "Илья Черкасов",
                             Available = true,
                             CategoryId = 1,
-                            DateTime = new DateTime(2020, 5, 15, 8, 18, 44, 371, DateTimeKind.Local).AddTicks(9930),
-                            Image = "/img/blog-post/dish.jpg",
+                            DateTime = new DateTime(2020, 5, 31, 14, 19, 5, 864, DateTimeKind.Local).AddTicks(6288),
+                            Image = new byte[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                             Name = "Тарелка здорового питания",
                             PostOfWeek = true,
                             ShortDescription = "Мы сделали красивую тарелку здорового питания",
@@ -116,8 +116,8 @@ namespace HealthPromotion.Migrations
                             AuthorName = "Илья Черкасов",
                             Available = true,
                             CategoryId = 4,
-                            DateTime = new DateTime(2020, 5, 15, 8, 18, 44, 373, DateTimeKind.Local).AddTicks(1604),
-                            Image = "/img/blog-post/virus.jpg",
+                            DateTime = new DateTime(2020, 5, 31, 14, 19, 5, 865, DateTimeKind.Local).AddTicks(4741),
+                            Image = new byte[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                             Name = "Короновирус. Как защититься.",
                             PostOfWeek = true,
                             ShortDescription = "Все, что известно на сегодня о защите от коронавируса.",
@@ -129,8 +129,8 @@ namespace HealthPromotion.Migrations
                             AuthorName = "Илья Черкасов",
                             Available = true,
                             CategoryId = 2,
-                            DateTime = new DateTime(2020, 5, 15, 8, 18, 44, 373, DateTimeKind.Local).AddTicks(1722),
-                            Image = "/img/blog-post/self_development.jpg",
+                            DateTime = new DateTime(2020, 5, 31, 14, 19, 5, 865, DateTimeKind.Local).AddTicks(4818),
+                            Image = new byte[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                             Name = "7 стадий самомотивации",
                             PostOfWeek = true,
                             ShortDescription = "Психотерапевт, научный сотрудник Института мозга человека РАН Денис написал статью",
@@ -142,8 +142,8 @@ namespace HealthPromotion.Migrations
                             AuthorName = "Илья Черкасов",
                             Available = true,
                             CategoryId = 2,
-                            DateTime = new DateTime(2020, 5, 15, 8, 18, 44, 373, DateTimeKind.Local).AddTicks(1802),
-                            Image = "/img/blog-post/Before_and_After.jpg",
+                            DateTime = new DateTime(2020, 5, 31, 14, 19, 5, 865, DateTimeKind.Local).AddTicks(4836),
+                            Image = new byte[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                             Name = "ДО и ПОСЛЕ:",
                             PostOfWeek = false,
                             ShortDescription = "настоящие мотивирующие истории ДО и ПОСЛЕ",
@@ -155,8 +155,8 @@ namespace HealthPromotion.Migrations
                             AuthorName = "Илья Черкасов",
                             Available = true,
                             CategoryId = 1,
-                            DateTime = new DateTime(2020, 5, 15, 8, 18, 44, 373, DateTimeKind.Local).AddTicks(1831),
-                            Image = "/img/blog-post/blog-post1.jpg",
+                            DateTime = new DateTime(2020, 5, 31, 14, 19, 5, 865, DateTimeKind.Local).AddTicks(4850),
+                            Image = new byte[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                             Name = "продукты в холодильники диетолога",
                             PostOfWeek = false,
                             ShortDescription = "Диетолог Елена Мельникова рассказала, какие продукты всегда есть в ее холодильнике и чем она сама обедает и перекусывает с максимальной пользой для своего здоровья.",
@@ -168,8 +168,8 @@ namespace HealthPromotion.Migrations
                             AuthorName = "Илья Черкасов",
                             Available = true,
                             CategoryId = 2,
-                            DateTime = new DateTime(2020, 5, 15, 8, 18, 44, 373, DateTimeKind.Local).AddTicks(1857),
-                            Image = "/img/blog-post/blog-post2.jpg",
+                            DateTime = new DateTime(2020, 5, 31, 14, 19, 5, 865, DateTimeKind.Local).AddTicks(4867),
+                            Image = new byte[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                             Name = "Тревожность как ресурс: позволение, принятие, объятие",
                             PostOfWeek = false,
                             ShortDescription = "Психотерапевт Марина Сильченко дает подробную инструкцию с упражнениями - как подружиться с тревожностью и высвободить энергию на свершения за 3 этапа - Позволение, Принятие и Объятие.",
@@ -181,8 +181,8 @@ namespace HealthPromotion.Migrations
                             AuthorName = "Илья Черкасов",
                             Available = true,
                             CategoryId = 3,
-                            DateTime = new DateTime(2020, 5, 15, 8, 18, 44, 373, DateTimeKind.Local).AddTicks(1879),
-                            Image = "/img/blog-post/blog-post3.jpg",
+                            DateTime = new DateTime(2020, 5, 31, 14, 19, 5, 865, DateTimeKind.Local).AddTicks(4881),
+                            Image = new byte[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                             Name = "Шаги силовой подготовки бойца: баланс между силой, выносливостью и свободой движения",
                             PostOfWeek = false,
                             ShortDescription = "Какими бы единоборствами вы ни занимались: от бокса до борьбы, от UFC до туйшоу - эти универсальные рецепты тренировок от знаменитого врача и тренера вам помогут.",
@@ -194,8 +194,8 @@ namespace HealthPromotion.Migrations
                             AuthorName = "Илья Черкасов",
                             Available = true,
                             CategoryId = 3,
-                            DateTime = new DateTime(2020, 5, 15, 8, 18, 44, 373, DateTimeKind.Local).AddTicks(1900),
-                            Image = "/img/blog-post/blog-post4.jpg",
+                            DateTime = new DateTime(2020, 5, 31, 14, 19, 5, 865, DateTimeKind.Local).AddTicks(4894),
+                            Image = new byte[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                             Name = "Что эффективнее: одна высокоинтенсивная в неделю или регулярные среднеинтенсивные тренировки?",
                             PostOfWeek = false,
                             ShortDescription = "Хороший научный аргумент против мнения о том, что надо либо тренироваться 3-4 раза в неделю, либо вообще не тренироваться",

@@ -16,13 +16,13 @@ namespace HealthPromotion.Controllers
     {
         private readonly IPostRepository postRepository;
         private readonly AppDbContext db;
-        private readonly IWebHostEnvironment _appEnvironment;
 
-        public HomeController(IPostRepository postRepository, AppDbContext db, IWebHostEnvironment appEnvironment)
+
+        public HomeController(IPostRepository postRepository, AppDbContext db)
         {
             this.postRepository = postRepository;
             this.db = db;
-            _appEnvironment = appEnvironment;
+       
         }
 
      
@@ -66,7 +66,12 @@ namespace HealthPromotion.Controllers
             var posts = postRepository.AllPost;
             if (!string.IsNullOrEmpty(postName))
             {
-                posts = postRepository.AllPost.Where(x => x.Name == postName);
+                posts = postRepository.AllPost.
+                    Where(x => x.Name.ToLower().Trim() == postName.ToLower().Trim());
+            }
+            else
+            {
+                return RedirectToAction("Index");
             }
             var homeViewMoel = new HomeViewModel
             {
@@ -75,36 +80,22 @@ namespace HealthPromotion.Controllers
             return View(homeViewMoel);
         }
 
+    
+
         [HttpGet]
-        public IActionResult AddPost(int? id)
+        public IActionResult Login()
         {
-            if (id == null) return RedirectToAction("Index");
-            ViewBag.PostId = id;
             return View();
         }
 
         [HttpPost]
-        public string AddPost(Post post)
+        public IActionResult Login(string login, string password)
         {
-        
-            db.Posts.Add(post); // indentity insert off
-            db.SaveChanges();
-            return "Спасибо за публикацию!";
+            string authData = $"Login: {login} Password: {password}";
+            return Content(authData);
         }
 
         public IActionResult Blog() => View();
         public IActionResult FeedBack() => View();
-
-
-        public IActionResult GetFile()
-        {
-            // Путь к файлу
-            string file_path = Path.Combine(_appEnvironment.ContentRootPath, "Files/book.pdf");
-            // Тип файла - content-type
-            string file_type = "application/pdf";
-            // Имя файла - необязательно
-            string file_name = "book.pdf";
-            return PhysicalFile(file_path, file_type, file_name);
-        }
     }
 }
