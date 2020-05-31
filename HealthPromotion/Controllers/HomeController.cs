@@ -51,14 +51,14 @@ namespace HealthPromotion.Controllers
             return View(homeViewModel);
         }
 
-        public IActionResult PostDetails(int id)
+        public IActionResult PostDetails(int id) // CALL TWO TIME! 
         {
-            var post = postRepository.getPostById(id);
-            if (post == null)
+            if (id == 0)
             {
                 return NotFound("Публикация не найдена");
             }
-      
+            var post = postRepository.getPostById(id);
+
             return View(post);
         }
 

@@ -2,23 +2,23 @@
     Layout = "_Layout";
 }
 
+@*CKEDITOR*@
+<script src="~/ckeditor/ckeditor.js"></script>
 
 <!DOCTYPE html>
 <html>
 <head>
     <title>Добавление публикации</title>
-     
+
 </head>
 <body>
     <div>
 
         <h3>Добавление публикации</h3>
         <p>Для добавление публикации заполните следующие поля:</p>
-        <input type="hidden" value="@ViewBag.PostId" name="PostId" />
 
-
-        <form asp-action="AddPost" method="post">
-            <input type="hidden" name="id" value="0" />
+        <form asp-action="AddPost" asp-controller="Post" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="id" value="0" />S
 
             <div class="form-group col-md-15">
                 <input class="form-control" type="text" name="AuthorName" placeholder="Имя автора" />
@@ -36,8 +36,7 @@
             </div>
 
             <div class="form-group  col-md-15">
-                <input name="Image" type="file" class="form-control"  placeholder="Изображение"/>
-                @*<input class="form-control" type="text" name="Image" placeholder="Изображение" />*@
+                <input name="Image" type="file" class="form-control" />
             </div>
             <div class="checkbox">
                 <label><input type="checkbox" name="Available" value=""> Доступность</label>
@@ -55,8 +54,6 @@
                 <div class="select-arrow"></div>
             </div>
 
-
-
             <div class="panel-body">
                 <button type="submit" id="submit" style="width:650px;"
                         class="btn btn-success"
@@ -64,8 +61,6 @@
                     Отправить
                 </button>
             </div>
-
-
 
 
         </form>

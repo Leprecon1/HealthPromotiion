@@ -32,9 +32,9 @@ namespace HealthPromotion.Models
             }
         }
 
-        public Post getPostById(int pieId)
+        public Post getPostById(int postId)
         {
-            return appDbContext.Posts.First(x => x.PostId == pieId);
+            return appDbContext.Posts.First(x => x.PostId == postId); 
         }
     }
 }
