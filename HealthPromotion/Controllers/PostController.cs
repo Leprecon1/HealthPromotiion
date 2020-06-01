@@ -15,10 +15,12 @@ namespace HealthPromotion.Controllers
     public class PostController : Controller
     {
 
+        private readonly IPostRepository postRepository;
         private readonly AppDbContext db;
 
-        public PostController(AppDbContext db)
-        {   
+        public PostController(IPostRepository postRepository, AppDbContext db)
+        {
+            this.postRepository = postRepository;
             this.db = db;
         }
    
@@ -52,6 +54,23 @@ namespace HealthPromotion.Controllers
             post.Image = imageData;
 
             db.Posts.Add(post); 
+            db.SaveChanges();
+            return Redirect("/Home/Index");
+        }
+
+        public RedirectResult DeletePost(int id)
+        {
+            var post = postRepository.getPostById(id);
+            db.Posts.Remove(post);
+            db.SaveChanges();
+            return Redirect("/Home/Index");
+        }
+
+        public RedirectResult MakePostLikePostOfWeek(int id)
+        {
+            var post = postRepository.getPostById(id);
+            post.PostOfWeek = !post.PostOfWeek;
+            db.Update(post);
             db.SaveChanges();
             return Redirect("/Home/Index");
         }

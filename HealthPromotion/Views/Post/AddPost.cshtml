@@ -18,7 +18,7 @@
         <p>Для добавление публикации заполните следующие поля:</p>
 
         <form asp-action="AddPost" asp-controller="Post" method="post" enctype="multipart/form-data">
-            <input type="hidden" name="id" value="0" />S
+            <input type="hidden" name="id" value="0" />
 
             <div class="form-group col-md-15">
                 <input class="form-control" type="text" name="AuthorName" placeholder="Имя автора" />
@@ -39,7 +39,7 @@
                 <input name="Image" type="file" class="form-control" />
             </div>
             <div class="checkbox">
-                <label><input type="checkbox" name="Available" value=""> Доступность</label>
+                <label><input type="checkbox" name="Available" value="true"> Доступность</label>
             </div>
 
             <label>Категория:</label>

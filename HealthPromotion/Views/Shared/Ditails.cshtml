@@ -27,6 +27,8 @@
                         <div class="news_socail ml-sm-auto mt-sm-0 mt-2">
                             <a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a asp-controller="Post" asp-action="MakePostLikePostOfWeek" asp-route-id="@Model.PostId"> <i class="fa fa-check-circle" style="color: #51cf66;"></i></a>
+                            <a asp-controller="Post" asp-action="DeletePost" asp-route-id="@Model.PostId"> <i class="fa fa-trash" style="color: #ff6b6b;"></i></a>
                         </div>
                     </div>
                 </div>
