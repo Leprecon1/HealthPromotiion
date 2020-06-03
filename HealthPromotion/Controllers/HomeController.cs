@@ -14,6 +14,7 @@ using System.Security.Claims;
 
 namespace HealthPromotion.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class HomeController : Controller
     {
         private readonly IPostRepository postRepository;

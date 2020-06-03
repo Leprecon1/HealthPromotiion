@@ -33,15 +33,8 @@ namespace HealthPromotion
             services.AddHttpContextAccessor();
             services.AddSession();
 
-
-            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-                .AddCookie(options =>
-                {
-                    options.LoginPath = new PathString("/Account/Login");
-                    options.AccessDeniedPath = new PathString("/Account/Login");
-                });
-
-
+            services.AddIdentity<User, IdentityRole>()
+            .AddEntityFrameworkStores<AppDbContext>();
 
             services.AddMvc(o => {
                 o.EnableEndpointRouting = false;
