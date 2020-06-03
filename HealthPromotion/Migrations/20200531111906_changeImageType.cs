@@ -7,8 +7,7 @@ namespace HealthPromotion.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "People");
+       
 
             migrationBuilder.AlterColumn<byte[]>(
                 name: "Image",

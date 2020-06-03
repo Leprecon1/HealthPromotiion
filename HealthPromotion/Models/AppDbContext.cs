@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,14 +9,15 @@ using System.Threading.Tasks;
 
 namespace HealthPromotion.Models
 {
-    public class AppDbContext : DbContext   
+    public class AppDbContext : IdentityDbContext<User>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
-
+          
         }
         public DbSet<Post> Posts { get; set; }
         public DbSet<Category> Categories { get; set; }
+ 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -23,6 +25,10 @@ namespace HealthPromotion.Models
             modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 2, CategoryName = "Motivation" });
             modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 3, CategoryName = "Training" });
             modelBuilder.Entity<Category>().HasData(new Category{ CategoryId = 4, CategoryName = "Science"} );
+
+
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

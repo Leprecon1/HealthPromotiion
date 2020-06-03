@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace HealthPromotion.Controllers
 {
@@ -25,7 +27,6 @@ namespace HealthPromotion.Controllers
        
         }
 
-     
         public IActionResult Index(string category)
         {
             string _category = category;
@@ -40,7 +41,7 @@ namespace HealthPromotion.Controllers
             {
                 posts = postRepository.AllPost.Where(x => x.Category.CategoryName == category).OrderBy(i => i.PostId);
                 currCategory = _category;
-               
+
             }
 
             var homeViewModel = new HomeViewModel
@@ -50,6 +51,8 @@ namespace HealthPromotion.Controllers
             };
             return View(homeViewModel);
         }
+  
+    
 
         public IActionResult PostDetails(int id) // CALL TWO TIME! 
         {

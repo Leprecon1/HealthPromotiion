@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Identity;
 
 namespace HealthPromotion
 {
@@ -31,6 +33,16 @@ namespace HealthPromotion
             services.AddHttpContextAccessor();
             services.AddSession();
 
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options =>
+                {
+                    options.LoginPath = new PathString("/Account/Login");
+                    options.AccessDeniedPath = new PathString("/Account/Login");
+                });
+
+
+
             services.AddMvc(o => {
                 o.EnableEndpointRouting = false;
             });
@@ -42,9 +54,11 @@ namespace HealthPromotion
             app.UseStatusCodePages();
             app.UseStaticFiles();
             app.UseSession();
-      //      app.UseMvcWithDefaultRoute();
+ 
          
             app.UseRouting();
+            app.UseAuthentication();    // аутентификация
+            app.UseAuthorization();     // авторизация
 
             app.UseMvc(route =>
             {

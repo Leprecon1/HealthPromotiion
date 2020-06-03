@@ -7,22 +7,37 @@
   <ItemGroup>
     <Compile Remove="Migrations\20200531115331_test.cs" />
     <Compile Remove="Migrations\20200531115331_test.Designer.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="JSON" Version="1.0.1" />
-    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.7" />
-    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.3" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.3">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.3" />
+    <Compile Remove="Migrations\20200601065218_addRoleTable.cs" />
+    <Compile Remove="Migrations\20200601065218_addRoleTable.Designer.cs" />
+    <Compile Remove="Migrations\20200601073107_up.cs" />
+    <Compile Remove="Migrations\20200601073107_up.Designer.cs" />
+    <Compile Remove="Migrations\20200601093333_test.cs" />
+    <Compile Remove="Migrations\20200601093333_test.Designer.cs" />
+    <Compile Remove="Migrations\20200601093416_test.cs" />
+    <Compile Remove="Migrations\20200601093416_test.Designer.cs" />
+    <Compile Remove="Migrations\20200601122312_dsf.cs" />
+    <Compile Remove="Migrations\20200601122312_dsf.Designer.cs" />
+    <Compile Remove="Migrations\20200601122445_addRoleTable.cs" />
+    <Compile Remove="Migrations\20200601122445_addRoleTable.Designer.cs" />
+    <Compile Remove="Migrations\20200601123610_addf.cs" />
+    <Compile Remove="Migrations\20200601123610_addf.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="wwwroot\Files\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.4" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NETCore.App" Version="2.2.8" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.3" />
   </ItemGroup>
 
 </Project>
