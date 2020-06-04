@@ -1,5 +1,6 @@
 ﻿using HealthPromotion.Models;
 using HealthPromotion.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -92,6 +93,8 @@ namespace HealthPromotion.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-   
+    
+
+
     }
 }

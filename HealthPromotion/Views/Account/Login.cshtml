@@ -1,24 +1,44 @@
 ﻿@model HealthPromotion.ViewModels.LoginViewModel
 
-<h2>Вход в приложение</h2>
+<h2>Для продолжения введите свои данные</h2>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" rel="stylesheet" />
+
 <form method="post" asp-controller="Account" asp-action="Login"
       asp-route-returnUrl="@Model.ReturnUrl">
     <div asp-validation-summary="ModelOnly"></div>
     <div>
         <label asp-for="Email"></label><br />
-        <input asp-for="Email" />
+        <input class="form-control" asp-for="Email" />
         <span asp-validation-for="Email"></span>
     </div>
     <div>
         <label asp-for="Password"></label><br />
-        <input asp-for="Password" />
+        <input class="form-control" asp-for="Password" />
         <span asp-validation-for="Password"></span>
     </div>
     <div>
         <label asp-for="RememberMe"></label><br />
         <input asp-for="RememberMe" />
     </div>
-    <div>
-        <input type="submit" value="Войти" />
+
+    <div class="panel-body">
+        <button type="submit" id="submit" style="width:650px;"
+                class="btn btn-success"
+                back>
+            Войти
+        </button>
     </div>
+
+    <div class="flex-col-c p-t-170 p-b-40">
+        <span class="txt1 p-b-9">
+            У вам еще нету аккаунта?
+        </span>
+        <br />
+
+        <a  asp-controller="Account" asp-action="Register" class="txt3">
+            Sign up now
+        </a>
+    </div>
+
+
 </form>

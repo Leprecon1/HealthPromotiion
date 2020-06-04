@@ -14,7 +14,6 @@ using System.Security.Claims;
 
 namespace HealthPromotion.Controllers
 {
-    [Authorize(Roles = "admin")]
     public class HomeController : Controller
     {
         private readonly IPostRepository postRepository;
@@ -97,6 +96,13 @@ namespace HealthPromotion.Controllers
         {
             string authData = $"Login: {login} Password: {password}";
             return Content(authData);
+        }
+
+        public async Task<IActionResult> SendMessage()
+        {
+           // EmailService emailService = new EmailService();
+           // await emailService.SendEmailAsync("ilha.cherckasov@yandex.by", "Тема письма", "Тест письма: тест!");
+            return RedirectToAction("Index");
         }
 
         public IActionResult Blog() => View();

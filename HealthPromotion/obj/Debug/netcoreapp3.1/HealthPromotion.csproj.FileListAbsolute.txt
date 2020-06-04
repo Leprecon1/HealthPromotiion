@@ -172,3 +172,9 @@ C:\Users\HP\source\repos\HealthPromotion\HealthPromotion\obj\Debug\netcoreapp3.1
 C:\Users\HP\source\repos\HealthPromotion\HealthPromotion\obj\Debug\netcoreapp3.1\Razor\Views\Roles\Edit.cshtml.g.cs
 C:\Users\HP\source\repos\HealthPromotion\HealthPromotion\obj\Debug\netcoreapp3.1\Razor\Views\Roles\Index.cshtml.g.cs
 C:\Users\HP\source\repos\HealthPromotion\HealthPromotion\obj\Debug\netcoreapp3.1\Razor\Views\Roles\UserList.cshtml.g.cs
+C:\Users\HP\source\repos\HealthPromotion\HealthPromotion\bin\Debug\netcoreapp3.1\MailKit.dll
+C:\Users\HP\source\repos\HealthPromotion\HealthPromotion\bin\Debug\netcoreapp3.1\MimeKit.dll
+C:\Users\HP\source\repos\HealthPromotion\HealthPromotion\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\Users\HP\source\repos\HealthPromotion\HealthPromotion\obj\Debug\netcoreapp3.1\HealthPromotion.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\HealthPromotion\HealthPromotion\obj\Debug\netcoreapp3.1\HealthPromotion.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\HP\source\repos\HealthPromotion\HealthPromotion\obj\Debug\netcoreapp3.1\HealthPromotion.MvcApplicationPartsAssemblyInfo.cache
