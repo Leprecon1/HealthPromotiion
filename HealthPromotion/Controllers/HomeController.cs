@@ -65,7 +65,8 @@ namespace HealthPromotion.Controllers
             return View(post);
         }
 
-        public IActionResult Search(string postName) {
+        public IActionResult Search(string postName)
+        {
             var posts = postRepository.AllPost;
             if (!string.IsNullOrEmpty(postName))
             {
@@ -85,18 +86,18 @@ namespace HealthPromotion.Controllers
 
     
 
-        [HttpGet]
-        public IActionResult Login()
-        {
-            return View();
-        }
+        //[HttpGet]
+        //public IActionResult Login()
+        //{
+        //    return View();
+        //}
 
-        [HttpPost]
-        public IActionResult Login(string login, string password)
-        {
-            string authData = $"Login: {login} Password: {password}";
-            return Content(authData);
-        }
+        //[HttpPost]
+        //public IActionResult Login(string login, string password)
+        //{
+        //    string authData = $"Login: {login} Password: {password}";
+        //    return Content(authData);
+        //}
 
         public async Task<IActionResult> SendMessage()
         {
